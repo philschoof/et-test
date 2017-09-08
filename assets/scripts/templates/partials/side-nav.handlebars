@@ -1,1 +1,10 @@
-<div>Hello</div>
+<div>
+  <ul class="">
+    {{#each data as |data index|}}
+      <li class="side-nav-item" data-index={{index}}>
+        
+        {{ this.name }}
+      </li>
+    {{/each}}
+  </ul>
+</div>

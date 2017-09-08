@@ -1,11 +1,13 @@
 'use strict';
 
-const data = require('./data')
-const dashboardHandlers = require('./event-handlers/dashboard-handlers')
+const dataStore = require('./data')
+const eventHandlers = require('./event-handlers')
 
 $(() => {
-  debugger
-  dashboardHandlers.renderDashboard()
-  data.loadJSONData()
-  console.log(data)
+  dataStore.loadJSONData
+  .then(() => {
+    console.log(dataStore.data)
+    eventHandlers.addHandlers()
+  })
+
 })

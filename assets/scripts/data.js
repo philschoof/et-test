@@ -1,17 +1,13 @@
 'use strict'
 
-// const data = require()
+const dataStore = {
+  loadJSONData:$.getJSON(('../../schema.json'), (json) => {
+    dataStore.data = json
+    dataStore.selectedItem = dataStore.data[0]
+  }),
 
-const loadJSONData = () => {
-  $.getJSON(('../../schema.json'), (json) => {
-    console.log(json)
-  })
-}
 
-const parsedData = {
 
 }
 
-module.exports = {
-  loadJSONData
-}
+module.exports = dataStore

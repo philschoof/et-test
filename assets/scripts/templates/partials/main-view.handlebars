@@ -1,0 +1,30 @@
+<div>{{selectedItem.name}}</div>
+{{#if selectedItem.containing_object}}
+  {{#each selectedItem.containing_object.properties as |property| }}
+    <ul>
+      <li>Data Type: {{property.data_type}}</li>
+      <li>Usage:
+        <ul>
+          {{#each property.app_keys as |key|}}
+          <li>{{ key}}</li>
+          {{/each}}
+        </ul>
+      </li>
+      <li>EverTrueFieldName: {{property.name}}</li>
+    </ul>
+  {{/each}}
+{{else}}
+  {{#each selectedItem.properties as |property| }}
+    <ul>
+      <li>Data Type: {{property.data_type}}</li>
+      <li>Usage:
+        <ul>
+          {{#each property.app_keys as |key|}}
+          <li>{{ key}}</li>
+          {{/each}}
+        </ul>
+      </li>
+      <li>EverTrueFieldName: {{property.name}}</li>
+    </ul>
+  {{/each}}
+{{/if}}
