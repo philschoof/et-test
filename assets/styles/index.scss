@@ -1,9 +1,22 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+h1 {
+  font-size: 18px;
+}
+
 .side-nav {
-  margin-top: 20px;
+  margin-top: 15px;
   max-height: 700px;
   overflow-y: scroll;
   border: 1px solid #333;
+}
+
+.side-nav-item span {
+  float: right;
+}
+
+.item-header {
+  font-weight: bold;
+  text-decoration: underline;
 }

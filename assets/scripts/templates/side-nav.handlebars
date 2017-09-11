@@ -1,23 +1,22 @@
 <div class="panel list-group">
-{{#each data as |data index|}}
-  {{#if data.containing_object}}
-  <a href="#" class="list-group-item side-nav-item" data-toggle="collapse" data-target="#{{this.id}}" data-index="{{index}}">{{ this.name }}</a>
-  <div id="{{this.id}}" class="sublinks collapse">
-    {{#each data.containing_object.properties as |property index|}}
-      <a class="list-group-item small group-property" data-index="{{index}}"><span class="glyphicon glyphicon-chevron-right"></span> {{ property.name }}</a>
-    {{/each}}
-  </div>
+  <div class="list-group-item item-header">General Info</div>
 
-
-  {{ else }}
-
-  <a href="#" class="list-group-item side-nav-item" data-toggle="collapse" data-target="#{{this.id}}" data-index="{{index}}">{{ this.name }}</a>
+  {{#each data as |data index|}}
+    <a href="#" class="list-group-item side-nav-item" data-toggle="collapse" data-target="#{{this.id}}" data-index="{{index}}">{{ this.name }}</a>
     <div id="{{this.id}}" class="sublinks collapse">
-      {{#each this.properties as |property index|}}
-       <a class="list-group-item small group-property" data-index="{{index}}">> {{property.name}}</a>
-       {{/each}}
-    </div>
 
-  {{/if}}
-{{/each}}
+    {{#if data.containing_object}}
+      {{#each data.containing_object.properties as |property index|}}
+        <a class="list-group-item small group-property" data-index="{{index}}"><span class="glyphicon glyphicon-chevron-right"></span> {{ property.name }}</a>
+      {{/each}}
+
+    {{ else }}
+
+      {{#each this.properties as |property index|}}
+       <a class="list-group-item small group-property" data-index="{{index}}"><span class="glyphicon glyphicon-chevron-right"></span> {{property.name}}</a>
+       {{/each}}
+    {{/if}}
+
+    </div>
+  {{/each}}
 </div>

@@ -7,7 +7,6 @@ $(() => {
   dataStore.loadJSONData
   .then(() => {
     console.log(dataStore.data)
-    eventHandlers.addHandlers()
+    eventHandlers.addHandlers() //must wait until data is loaded to render templates and add event handlers
   })
-
 })
