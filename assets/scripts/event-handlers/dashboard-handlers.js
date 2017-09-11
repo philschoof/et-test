@@ -3,10 +3,11 @@
 const dataStore = require('../data')
 
 const dashboardActions = {
-  renderDashboard:() => {
+  renderDashboard:(clickedItem) => {
+    let selectedItem = clickedItem || dataStore.selectedItem
     let dashboardTemplate = require('../templates/main-view.handlebars')
     $('.dashboard').html(dashboardTemplate({
-      selectedItem:dataStore.selectedItem
+      selectedItem: selectedItem
     }));
   },
 }

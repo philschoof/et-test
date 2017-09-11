@@ -23,7 +23,19 @@ const addSideNavHandlers = () => {
   $('.side-nav-item').on('click', function() {
     let navItemIndex = $(this).data('index');
     dataStore.selectedItem = dataStore.data[navItemIndex]
-    dashboardHandlers.renderDashboard()
+    console.log(dataStore.selectedItem)
+    dashboardHandlers.renderDashboard(dataStore.selectedItem)
+  })
+
+  $('.group-property').on('click', function() {
+    let clickedItem = ''
+    if (dataStore.selectedItem.containing_object) {
+      clickedItem = dataStore.selectedItem.containing_object.properties[$(this).data('index')]
+    } else {
+      clickedItem = dataStore.selectedItem.properties[$(this).data('index')]
+    }
+    dashboardHandlers.renderDashboard(clickedItem)
+
   })
 }
 

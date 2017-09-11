@@ -1,30 +1,21 @@
-<div>{{selectedItem.name}}</div>
-{{#if selectedItem.containing_object}}
-  {{#each selectedItem.containing_object.properties as |property| }}
-    <ul>
-      <li>Data Type: {{property.data_type}}</li>
-      <li>Usage:
-        <ul>
-          {{#each property.app_keys as |key|}}
-          <li>{{ key}}</li>
-          {{/each}}
-        </ul>
-      </li>
-      <li>EverTrueFieldName: {{property.name}}</li>
-    </ul>
-  {{/each}}
-{{else}}
-  {{#each selectedItem.properties as |property| }}
-    <ul>
-      <li>Data Type: {{property.data_type}}</li>
-      <li>Usage:
-        <ul>
-          {{#each property.app_keys as |key|}}
-          <li>{{ key}}</li>
-          {{/each}}
-        </ul>
-      </li>
-      <li>EverTrueFieldName: {{property.name}}</li>
-    </ul>
-  {{/each}}
-{{/if}}
+<h1>{{selectedItem.name}}</h1>
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>{{ selectedItem.data_type }}</td>
+    </tr>
+    {{#if selectedItem.app_keys}}
+      <tr>
+        <td>Usage</td>
+        <td>{{ selectedItem.app_keys }}
+      </tr>
+    {{/if}}
+    <tr>
+      <td>EverTrue Field Name</td>
+      <td>{{ selectedItem.name}}</td>
+    </tr>
+
+  </tbody>
+</table>

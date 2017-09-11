@@ -1,6 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-ul {
-  list-style: none;
+.side-nav {
+  margin-top: 20px;
+  max-height: 700px;
+  overflow-y: scroll;
+  border: 1px solid #333;
 }
