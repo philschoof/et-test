@@ -4,7 +4,7 @@ const dataStore = require('../data')
 
 const dashboardActions = {
   renderDashboard:() => {
-    let dashboardTemplate = require('../templates/dashboard.handlebars')
+    let dashboardTemplate = require('../templates/main-view.handlebars')
     $('.dashboard').html(dashboardTemplate({
       selectedItem:dataStore.selectedItem
     }));

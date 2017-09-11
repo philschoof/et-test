@@ -4,9 +4,18 @@ const dataStore = require('../data')
 const dashboardHandlers = require('./dashboard-handlers')
 
 const renderSideNav = () => {
-    let sideNavTemplate = require('../templates/partials/side-nav.handlebars')
+  //adds boolean to each object to show if object has containing_object prop for templating
+  let treatedData = dataStore.data.map((obj) => {
+    if (obj.containing_object) {
+      obj.hasContainingObject = true
+    } else {
+      obj.hasContainingObject = false
+    }
+    return obj
+  })
+    let sideNavTemplate = require('../templates/side-nav.handlebars')
     $('.side-nav').html(sideNavTemplate({
-      data:dataStore.data,
+      data: dataStore.data
     }));
   }
 

@@ -1,13 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-
-.side-nav ul {
-  position: relative;
-  right: 220px;
-  transition: .3s;
-}
-
-.side-nav:hover ul {
-  right: 0px;
+ul {
+  list-style: none;
 }

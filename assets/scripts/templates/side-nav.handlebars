@@ -1,0 +1,18 @@
+<div class="panel list-group">
+{{#each data as |data index|}}
+  {{#if data.containing_object}}
+  <a href="#" class="list-group-item side-nav-item" data-toggle="collapse" data-target="#{{this.id}}" data-index="{{index}}">{{ this.name }} <span class="glyphicon glyphicon-chevron-down"></span></a>
+  <div id="{{this.id}}" class="sublinks collapse">
+   <a class="list-group-item small">Type</a>
+   <a class="list-group-item small">Usage</a>
+   <a class="list-group-item small">EverTrue Field Name</a>
+  </div>
+
+
+  {{ else }}
+
+  <a href="#" class="list-group-item side-nav-item" data-index="{{index}}">{{ this.name }}</a>
+
+  {{/if}}
+{{/each}}
+</div>
