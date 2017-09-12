@@ -2,18 +2,24 @@
   <div class="list-group-item item-header">General Info</div>
 
   {{#each data as |data index|}}
-    <a href="#" class="list-group-item side-nav-item" data-toggle="collapse" data-target="#{{this.id}}" data-index="{{index}}">{{ this.name }}</a>
+    <a href="#" class="list-group-item side-nav-item" data-toggle="collapse" data-target="#{{this.id}}" data-index="{{index}}">
+      {{ this.name }}
+    </a>
     <div id="{{this.id}}" class="sublinks collapse">
 
     {{#if data.containing_object}}
       {{#each data.containing_object.properties as |property index|}}
-        <a class="list-group-item small group-property" data-index="{{index}}"><span class="glyphicon glyphicon-chevron-right"></span> {{ property.name }}</a>
+        <a class="list-group-item small group-property" data-index="{{index}}">
+          <span class="glyphicon glyphicon-chevron-right"></span> {{ property.name }}
+        </a>
       {{/each}}
 
     {{ else }}
 
       {{#each this.properties as |property index|}}
-       <a class="list-group-item small group-property" data-index="{{index}}"><span class="glyphicon glyphicon-chevron-right"></span> {{property.name}}</a>
+       <a class="list-group-item small group-property" data-index="{{index}}">
+         <span class="glyphicon glyphicon-chevron-right"></span> {{property.name}}
+       </a>
        {{/each}}
     {{/if}}
 

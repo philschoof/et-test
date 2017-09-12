@@ -19,7 +19,8 @@ const addSideNavHandlers = () => {
 
   $('.group-property').on('click', function() {
     let clickedItemIndex = $(this).data('index')
-    let clickedItem = dataStore.selectedItem.containing_object ? dataStore.selectedItem.containing_object.properties[clickedItemIndex] : dataStore.selectedItem.properties[clickedItemIndex]
+    let clickedItem = dataStore.selectedItem.containing_object ?
+      dataStore.selectedItem.containing_object.properties[clickedItemIndex] : dataStore.selectedItem.properties[clickedItemIndex]
     dashboardHandlers.renderDashboard(clickedItem)
   })
 }

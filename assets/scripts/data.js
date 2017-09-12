@@ -1,5 +1,7 @@
 'use strict'
 
+const data = require('../../schema.json')
+
 const dataStore = {
   loadJSONData:$.getJSON(('../../schema.json'), (json) => {
     dataStore.data = json
