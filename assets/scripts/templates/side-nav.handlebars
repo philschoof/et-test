@@ -2,7 +2,6 @@
   <div class="panel panel-default">
     <div class="list-group-item item-header">General Info</div>
       {{#each data as |data index|}}
-
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="side-nav-item" data-parent="#group-list" data-toggle="collapse" href="#collapse-{{data.id}}" data-index="{{index}}">
@@ -11,22 +10,20 @@
           </h4>
         </div>
 
-        <div id="collapse-{{data.id}}" class="panel-collapse collapse">
-          <ul class="list-group">
-          {{#if data.containing_object}}
-            {{#each data.containing_object.properties as |property index|}}
-              <li class="list-group-item group-property" data-index="{{index}}">{{ property.name }}</li>
-            {{/each}}
-          {{ else }}
-            {{#each data.properties as |property index|}}
-              <li class="list-group-item group-property" data-index="{{index}}">{{ property.name }}</li>
-            {{/each}}
-          {{/if}}
-          </ul>
-        </div>
+        {{#if data.containing_object}}
+          <div id="collapse-{{data.id}}" class="panel-collapse collapse">
+            {{> partials/sub-menu data = data.containing_object}}
+          </div>
+        {{/if}}
+
+        {{#if data.properties}}
+          <div id="collapse-{{data.id}}" class="panel-collapse collapse">
+            {{> partials/sub-menu data = data}}
+          </div>
+        {{/if}}
+
+
       {{/each}}
-
-
     </div>
   </div>
 </div>
