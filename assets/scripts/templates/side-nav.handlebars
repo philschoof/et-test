@@ -10,18 +10,17 @@
           </h4>
         </div>
 
-        {{#if data.containing_object}}
+        {{#if this.containing_object}}
           <div id="collapse-{{data.id}}" class="panel-collapse collapse">
-            {{> partials/sub-menu data = data.containing_object}}
+            {{> partials/sub-menu subMenuData=data.containing_object}}
           </div>
         {{/if}}
 
         {{#if data.properties}}
           <div id="collapse-{{data.id}}" class="panel-collapse collapse">
-            {{> partials/sub-menu data = data}}
+            {{> partials/sub-menu subMenuData=data}}
           </div>
         {{/if}}
-
 
       {{/each}}
     </div>

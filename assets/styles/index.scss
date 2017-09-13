@@ -12,11 +12,15 @@ h1 {
   border: 1px solid #333;
 }
 
-.side-nav-item span {
-  float: right;
-}
-
 .item-header {
   font-weight: bold;
+  text-decoration: underline;
+}
+
+.group-property {
+  cursor: pointer;
+}
+
+.group-property:hover {
   text-decoration: underline;
 }
