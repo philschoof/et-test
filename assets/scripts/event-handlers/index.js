@@ -1,10 +1,10 @@
 'use strict'
 
-const dashboardActions = require('./dashboard-handlers')
+const mainSectionHandlers = require('./main-section-handlers')
 const sideNavHandlers = require('./side-nav-handlers')
 
 const addHandlers = () => {
-  dashboardActions.renderDashboard()
+  mainSectionHandlers.renderMainSection()
   sideNavHandlers.renderSideNav()
   sideNavHandlers.addSideNavHandlers()
 }

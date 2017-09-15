@@ -1,0 +1,22 @@
+<h1 class='item-header'>General Info</h1>
+
+<h2 class='item-header'>{{ selectedGroup.name }}</h2>
+
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>{{ selectedGroup.data_type }}</td>
+    </tr>
+    {{#if selectedGroup.app_keys}}
+      <tr>
+        <td>Usage</td>
+        <td>{{ selectedGroup.app_keys }}
+      </tr>
+    {{/if}}
+    <tr>
+      <td>EverTrue Field Name</td>
+      <td>{{ selectedGroup.name }}</td>
+    </tr>
+  </tbody>
+</table>

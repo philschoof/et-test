@@ -1,6 +1,6 @@
 <div class="panel-group" id="group-list">
   <div class="panel panel-default">
-    <div class="list-group-item item-header">General Info</div>
+    <div class="list-group-item item-header">Field Groups</div>
       {{#each data as |data index|}}
         <div class="panel-heading">
           <h4 class="panel-title">
@@ -10,15 +10,15 @@
           </h4>
         </div>
 
-        {{#if this.containing_object}}
+        {{#if data.containing_object}}
           <div id="collapse-{{data.id}}" class="panel-collapse collapse">
-            {{> partials/sub-menu subMenuData=data.containing_object}}
+            {{> partials/sub-menu subMenuData=data.containing_object }}
           </div>
         {{/if}}
 
         {{#if data.properties}}
           <div id="collapse-{{data.id}}" class="panel-collapse collapse">
-            {{> partials/sub-menu subMenuData=data}}
+            {{> partials/sub-menu subMenuData=data }}
           </div>
         {{/if}}
 

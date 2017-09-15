@@ -1,0 +1,22 @@
+.side-nav .panel {
+  margin-top: 15px;
+  max-height: 700px;
+  overflow-y: scroll;
+  border: 1px solid #333;
+}
+
+.side-nav .item-header {
+  font-weight: bold;
+}
+
+.item-header {
+  text-decoration: underline;
+}
+
+.group-property {
+  cursor: pointer;
+}
+
+.group-property:hover {
+  text-decoration: underline;
+}

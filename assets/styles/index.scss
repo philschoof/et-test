@@ -1,26 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'side-nav';
 
 h1 {
-  font-size: 18px;
+  font-size: 24px;
 }
 
-.side-nav .panel {
-  margin-top: 15px;
-  max-height: 700px;
-  overflow-y: scroll;
-  border: 1px solid #333;
+h2 {
+  font-size: 20px;
 }
 
-.item-header {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.group-property {
-  cursor: pointer;
-}
-
-.group-property:hover {
-  text-decoration: underline;
+td {
+  width: 50%;
 }
